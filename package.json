@@ -1,0 +1,20 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "RS School, Stage1. Task: Virtual Keyboard.\r ---\r Task: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/virtual-keyboard/virtual-keyboard-en.md",
+  "main": "index.js",
+  "type": "module", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovoka-path/virtual-keyboard.git"
+  },
+  "author": "vovoka-path",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vovoka-path/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/vovoka-path/virtual-keyboard#readme"
+}
