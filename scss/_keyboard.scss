@@ -1,0 +1,173 @@
+// KEYBOARD
+
+.header,
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 100vw;
+  background-color: $bg-color-special-keys;
+  box-shadow: 2px 2px 12px 0px $bg-color-special-keys;
+}
+
+.h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-special-key;
+  text-shadow: 1px 1px 10px $color-secondary;
+}
+
+.author {
+  margin: 28px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  color: $color-special-key;
+  text-shadow: 1px 1px 10px $color-secondary;
+
+  & a {
+    color: $color-secondary;
+  }
+}
+
+.main {
+  height: calc(100vh - 80px * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  width: 100%;
+}
+
+.keyboard {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border: 3px solid $bg-color-special-keys;
+  border-radius: 5px;
+  background-color: $bg-color-keyboard;
+  box-shadow: 2px 2px 12px 0px $bg-color-special-keys;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.key-container {
+  margin-left: 6px;
+  padding: 5px;
+  height: 40px;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 1px 1px 1px $bg-color-keys;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &.standart {
+    background-color: $bg-color-keys;
+  }
+
+  &.special,
+  &.arrow {
+    color: $color-special-key;
+    background-color: $bg-color-special-keys;
+  }
+
+  &.small {
+    width: 40px;
+  }
+
+  &.medium {
+    width: 86px;
+  }
+  
+  &.long {
+    width: 110px;
+  }
+
+  &.space {
+    width: 270px;
+  }
+
+  &.Backspace {
+    width: 132px;
+  }
+}
+
+.key-container:hover {
+  color: $color-secondary;
+  border: 2px solid $color-secondary;
+  transform: scale(1.02);
+}
+
+.key-container {
+  &.keydown {
+    border: 3px solid $color-secondary;
+    box-shadow: -2px -2px 4px 0px $bg-color-special-keys;
+    background-color: $color-secondary;
+    transform: translate(0, 2px) ;
+  }
+
+  &.shift {
+    color: $color-secondary;
+  }
+}
+
+.key {
+  line-height: 28px;
+  text-align: center;
+}
+
+.help-container {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 100vw;
+}
+
+.help {
+  margin: 28px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  color: $color-secondary;
+  text-shadow: 1px 1px 10px $color-secondary;
+}
+
+.textarea-container {
+  margin: 0 auto;
+  padding: 30px 0;
+  max-width: 720px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.textarea {
+  padding: 10px;
+  width: 800px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: $color-primary;
+  background-color: $bg-color-textarea;
+  border-radius: 10px;
+  border: 5px solid $color-primary;
+}
