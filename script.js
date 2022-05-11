@@ -132,8 +132,8 @@ function handleKeydownKey(event) {
       if (KEYBOARD.ShiftOn === false) {
         isShift = !isShift;
         KEYBOARD.toogleLayout(lang, isShift);
-        KEYBOARD.ShiftOn = true;
       }
+      KEYBOARD.ShiftOn = true;
     }
 
     if (keyCode.includes('Control')) {
@@ -268,8 +268,8 @@ function clickOnKey(event) {
       textarea.value = textarea.value + keySymbol;
     }
     
-    addClassKeydown(key);
-    setTimeout(removeClassKeydown, 200, key);
+      addClassKeydown(key);
+      setTimeout(removeClassKeydown, 200, key);
   } 
 
   textarea.focus();
@@ -282,7 +282,9 @@ function addClassKeydown(key) {
 }
 
 function removeClassKeydown(key) {
-  key.classList.remove('keydown');
+  if (key) {
+    key.classList.remove('keydown');
+  }
 }
 
 function getCursorPosition(textarea) {

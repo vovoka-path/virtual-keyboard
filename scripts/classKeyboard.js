@@ -17,47 +17,49 @@ export default class Keyboard {
     this.allKeyCodes = this.getAllKeyCodes();
   }
 
-    getAllCurrentKeys() {
-      let allCurrentKeys = {};
-    
-      this.keys.map(row => {
-        row.map( keyObj => {
-          const key = new Key(keyObj);
+  getAllCurrentKeys() {
+    let allCurrentKeys = {};
+  
+    this.keys.map(row => {
+      row.map( keyObj => {
+        const key = new Key(keyObj);
 
-          if (key.type === 'standart') {
-            allCurrentKeys[key.code] = key[this.lang][this.isShift];
-          }
-        })
-      });
-    
-      return allCurrentKeys;
-    }
+        if (key.type === 'standart') {
+          allCurrentKeys[key.code] = key[this.lang][this.isShift];
+        }
+      })
+    });
+
+    this.allCurrentKeys = allCurrentKeys;
+
+    return allCurrentKeys;
+  }
+
+  getAllKeyCodes() {
+    let allKeyCodes = [];
   
-    getAllKeyCodes() {
-      let allKeyCodes = [];
-    
-      this.keys.map(row => {
-        row.map( key => {
-          allKeyCodes.push(key.code);
-        })
-      });
-    
-      return allKeyCodes;
-    }
+    this.keys.map(row => {
+      row.map( key => {
+        allKeyCodes.push(key.code);
+      })
+    });
   
-    getAllArrows() {
-      let allArrows = {};
-    
-      this.keys.map(row => {
-        row.map( key => {
-          if (key.type === 'arrow') {
-            allArrows[key.code] = key.symbols[0];
-          }
-        })
-      });
-    
-      return allArrows;
-    }
+    return allKeyCodes;
+  }
+
+  getAllArrows() {
+    let allArrows = {};
+  
+    this.keys.map(row => {
+      row.map( key => {
+        if (key.type === 'arrow') {
+          allArrows[key.code] = key.symbols[0];
+        }
+      })
+    });
+  
+    return allArrows;
+  }
 
   toogleLayout(lang, isShift = false) {
     this.lang = lang;
@@ -79,6 +81,8 @@ export default class Keyboard {
         keyNode.innerText = symbol;
       });
     }
+
+    this.getAllCurrentKeys();
   }
 
   render() {
